@@ -1,0 +1,80 @@
+stages:
+  - prepare
+  - ui_build
+  - us_build
+  - as_build
+  - fs_build
+
+cache:
+  paths:
+    - .m2/repository
+    - NewsappUI/node_modules
+
+prepare:
+  stage: prepare
+  image: mysql
+  variables:
+    MYSQL_DATABASE: newsapp_db
+    MYSQL_ROOT_PASSWORD: passw0rd
+  services:
+    - mysql
+  before_script:
+    - mysql --version
+  script:
+    - echo "SELECT 'OK';" | mysql --user=root --password="${MYSQL_ROOT_PASSWORD}" --host=mysql "${MYSQL_DATABASE}"
+
+
+ui_build:
+  stage: ui_build
+  image: node:12.9.0
+  before_script:
+    - apt-get update -q
+  script:
+    - pushd NewsappUI
+    - npm install -g @angular/cli
+    - npm install
+    - ng build --prod
+
+
+us_build:
+  stage: us_build
+  image: maven:3-jdk-8
+  before_script:
+    - apt-get update -q && apt-get install -qqy --no-install-recommends mysql-client
+  script:
+    - pushd userservice 
+    - mvn clean package -DskipTests
+    - popd
+  variables:
+    MYSQL_URL: jdbc:mysql://localhost:3306/newsapp_db
+    MYSQL_USERNAME: root
+    MYSQL_PASSWORD: passw0rd
+    EUREKA_HOST: localhost  
+  artifacts:
+    paths:
+      - userservice/target/*.jar
+    
+  
+as_build:
+  stage: as_build
+  image: maven:3-jdk-8
+  script: 
+    - pushd articleRecommendationService
+    - mvn clean package -DskipTests
+    - popd
+  artifacts:
+    paths:
+      - articleRecommendationService/target/*.jar
+
+  
+fs_build:
+  stage: fs_build
+  image: maven:3-jdk-8
+  script:
+    - pushd favouriteservice 
+    - mvn clean package -DskipTests
+    - popd
+  artifacts:
+    paths:
+      - favouriteservice/target/*.jar
+    
