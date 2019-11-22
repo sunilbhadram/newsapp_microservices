@@ -1,0 +1,19 @@
+<div class="mat-container">
+  <mat-toolbar color="primary" class="toolbar-container">
+    <h1>Welcome to Newsapp!</h1>
+    <span class="toolbar-spacer"></span>
+    <span class="rightItems"> 
+        <a mat-button (click)="switchToSearch()" routerLink=".">Search</a>
+      </span>
+    <span class="rightItems"> 
+      <a mat-button (click)="switchToFav()" routerLink=".">Favourites</a>
+    </span>
+    <span class="rightItems"> 
+      <a mat-button (click)="switchToRecom()" routerLink=".">Recommendations</a>
+    </span>
+    <span class="rightItems"> 
+        <a mat-button (click)="doLogout()" routerLink=".">Log out</a>
+      </span>
+  </mat-toolbar>
+  </div>
+  <router-outlet></router-outlet>

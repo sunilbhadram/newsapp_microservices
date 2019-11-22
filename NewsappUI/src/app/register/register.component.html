@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="errormessage">
+        <span>{{errorMessage}}</span>
+      </div>
+      <div class="successmessage">
+        <span>{{successMessage}}</span>
+      </div>
+  <mat-form-field class="form-elemnt">
+    <input matInput placeholder="Enter your username" [(ngModel)]="user.username">
+  </mat-form-field>
+  <mat-form-field class="form-elemnt">
+    <input matInput type="password" placeholder="Enter your password" [(ngModel)]="user.password">
+  </mat-form-field>
+  <mat-form-field class="form-elemnt">
+    <input matInput type="password" placeholder="Enter your password" [(ngModel)]="user.repassword">
+  </mat-form-field>
+  <mat-form-field class="form-elemnt">
+    <input matInput placeholder="Enter your Full Name" [(ngModel)]="user.userfullname">
+  </mat-form-field>
+  <mat-form-field class="form-elemnt">
+    <input matInput placeholder="Enter your Email" [(ngModel)]="user.useremail">
+  </mat-form-field>
+  <button color="primary" mat-raised-button (click)='doRegister()' class="loginButton">
+    Register
+  </button>
+  <a mat-button (click)='switchToLogin()' class="regiterLink">Login now</a>
+</div>

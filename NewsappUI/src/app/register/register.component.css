@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-elemnt{
+    width: 50%;
+}
+.loginButton{
+    margin-top: 5vh;
+    width: 50%;
+}
+.regiterLink{
+    margin-left: 45%;
+}
+.successmessage{
+    color: green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+ 
+}
+.errormessage{
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+}

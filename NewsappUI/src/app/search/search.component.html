@@ -1,0 +1,25 @@
+<div class="form-container">
+  <mat-form-field class="example-full-width">
+    <input class="searchbox" matInput placeholder="Search for an article" [(ngModel)]="serarcquery">
+  </mat-form-field>
+  <button mat-raised-button (click)='searchNews()' class="searchButton">
+    Search
+  </button>
+</div>
+<mat-divider></mat-divider>
+<div style="color: red" class="error-message" *ngIf="errorMessage">{{errorMessage}}</div>
+<mat-spinner style="margin: auto" *ngIf="spinnerFlag"></mat-spinner>
+<mat-list >
+  <mat-list-item *ngFor='let article of articles' class="list-item">
+    <h3 mat-line><a href="{{article.url}}">{{article.title}}</a></h3>
+    <p mat-line>{{article.description}}</p>
+    <mat-divider [inset]="true"></mat-divider>
+    <a mat-button *ngIf="favTitles && !favTitles.includes(article.title)">
+      <mat-icon class="button-item" color = "accent" (click)="addToFav(article)">favorite</mat-icon></a>
+    <a mat-button disabled='disabled' matTooltip='Already added to Favorites' *ngIf="favTitles.includes(article.title)"><mat-icon color = "black">favorite</mat-icon></a>
+  </mat-list-item>
+
+</mat-list>
+<mat-paginator  *ngIf="totalResults > 20 " [length]="totalResults"
+              [pageSize]="pageSize" (page)="onPageChange($event)">
+</mat-paginator>

@@ -1,0 +1,33 @@
+.example-full-width{
+      
+    width: 50vw;
+    margin-right: 1vw;
+    
+}
+.form-container{
+  width: 60vw;
+  margin-left: 15px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+.searchButton{
+    height: 2.3em;
+    background-color: coral;
+    margin-top: 20px;
+}
+
+.mat-item-para{
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+::ng-deep .mat-list .mat-list-item .mat-line{
+   word-wrap: break-word;
+   white-space: pre-wrap;
+   height:auto!important;
+   width: 70vw;
+}

@@ -1,0 +1,13 @@
+<div class="logincontainer">
+  <label class="error-message">{{ submitMessage }}</label>
+  <mat-form-field class="form-elemnt">
+    <input  class="username" matInput placeholder="Enter your username" [(ngModel)]="user.username">
+  </mat-form-field>
+  <mat-form-field class="form-elemnt">
+    <input matInput class="password" type="password" placeholder="Enter your password" [(ngModel)]="user.password">
+  </mat-form-field>
+  <button color="primary" mat-raised-button (click)='doLogin()' class="loginButton">
+    Login
+  </button>
+  <a mat-button (click)='switchToLogin()' class="regiterLink">Register new user</a>
+</div>

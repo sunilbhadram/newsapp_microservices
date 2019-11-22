@@ -1,0 +1,24 @@
+.mat-container{
+    margin: 10px;
+        
+}
+.toolbar-container{
+    height: 40px;
+}
+
+.toolbar-spacer{
+    flex: 1 1 auto;
+    
+}
+.rightItems{
+      padding-top: 15px;
+      font-style: initial;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 15px;
+      margin: 0px;
+  }
+  .menu-spacer {
+    flex: 1 1 auto;
+  }
+
+  

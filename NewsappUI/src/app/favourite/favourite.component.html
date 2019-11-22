@@ -1,0 +1,8 @@
+<mat-list>
+  <mat-list-item class="fav-list-item" *ngFor='let article of favarticles'>
+    <h3 mat-line><a href="{{article.url}}">{{article.title}}</a></h3>
+    <p mat-line>{{article.description}}</p>
+    <a mat-button ><mat-icon class="del-icon" color = "accent" (click) = "removeFav(article)" >delete</mat-icon></a>
+    <mat-divider [inset]="true"></mat-divider>
+  </mat-list-item>
+</mat-list> 

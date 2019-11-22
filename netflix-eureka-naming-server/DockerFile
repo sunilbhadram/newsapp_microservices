@@ -1,0 +1,5 @@
+FROM java:8
+WORKDIR /usr/src
+ADD ./target/EurekaNamingServer.jar /usr/src/EurekaNamingServer.jar
+EXPOSE 8761
+ENTRYPOINT ["java","-jar","EurekaNamingServer.jar"]

@@ -1,0 +1,15 @@
+.logincontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-elemnt{
+    width: 50%;
+}
+.loginButton{
+    margin-top: 5vh;
+    width: 50%;
+}
+.regiterLink{
+    margin-left: 40%;
+}

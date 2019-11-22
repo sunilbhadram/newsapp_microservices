@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      database: RecomServiceDB
+      port: 27017
+      host: localhost
+  application:
+    name: recom-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

@@ -1,0 +1,14 @@
+<mat-list>
+  <mat-list-item class="header-container">
+        <p mat-line>Article</p>
+        <mat-divider [inset]="true"></mat-divider>
+        <label mat-button >No. of people recommeded</label>
+  </mat-list-item>  
+  <mat-list-item *ngFor='let article of recomarticles' class="recom-container">
+      <h3 mat-line><a href="{{article.url}}">{{article.title}}</a></h3>
+      <p mat-line>{{article.description}}</p>
+      <mat-divider [inset]="true"></mat-divider>
+      <a mat-button aria-readonly="true">{{article.recomCount}}</a>
+    </mat-list-item>
+  
+  </mat-list>
