@@ -10,4 +10,4 @@
    3.1 git clone https://github.com/sunilbhadram/newsapp_microservices.git .
    
 4. Move to the NewsApp folder and run locate docker-compose.yml file 
-   4.1 Once you locate the above file run  "dokcer-compose up"  from the same direction. 
+   4.1 Once you locate the above file run  "docker-compose up"  from the same direction. 
